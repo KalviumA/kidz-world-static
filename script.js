@@ -1,41 +1,31 @@
-let cart=[];
+let cart = [];
 
-let product= document.querySelectorAll(".container>div")
+let product = document.querySelectorAll(".container>div");
 // console.log(product)
 
-product.forEach((ele)=>{
-    let addbutton=ele.querySelector(".button.flex");
-   
-    addbutton.addEventListener("click",()=>{
-        let obj={
-            name:ele.querySelector("h3"),
-            quantity:1,
-        }
-        cart.push(obj);
+product.forEach((ele) => {
+  let addbutton = ele.querySelector(".button.flex");
 
-  alert("added to the cart")
-    })
-  
-    
-})
-console.log(cart);
+  addbutton.addEventListener("click", () => {
+    let obj = {
+      name: ele.querySelector("h3"),
+      quantity: 1,
+    };
+    cart.push(obj);
 
-
-
-
-// now clickon cart reflect the number of items
-let cartItem=document.getElementById("cart");
-
-
-
-cartItem.addEventListener("click",()=>{
-
-    let value=document.getElementById("cart-value");
+    let value = document.getElementById("cart-value");
 
     // console.log(value.innerText)
-    value.innerText=cart.length;
+    value.innerText = cart.length;
+    alert("added to the cart");
+  });
+});
+// console.log(cart);
 
-    console.log(cart)
-    // console.log(cart.length)
-})
+// now clickon cart reflect the number of items
+let cartItem = document.getElementById("cart");
 
+cartItem.addEventListener("click", () => {
+  console.log(cart);
+  // console.log(cart.length)
+});
